@@ -78,14 +78,6 @@
       padding: 12px 18px;
       border: 1px solid #e3e6ea;
     }
-    .svg-demo {
-      margin-top: 24px;
-      margin-bottom: 8px;
-      width: 340px;
-      max-width: 90vw;
-      display: flex;
-      justify-content: center;
-    }
     .helper-text {
       text-align: center;
       font-size: 1.08rem;
@@ -102,38 +94,11 @@
     @media (max-width: 600px) {
       .instructions, .tip { padding: 16px; }
       .bookmarklet-btn { font-size: 1rem; padding: 12px 18px; }
-      .svg-demo { width: 98vw; }
     }
   </style>
 </head>
 <body>
   <h2>🗳️ Lead Fit Feedback Bookmarklet</h2>
-  
-  <!-- SVG Animation Demo -->
-  <div class="svg-demo">
-    <svg viewBox="0 0 340 100" width="340" height="100">
-      <!-- Bookmarks Bar -->
-      <rect x="20" y="20" width="300" height="28" rx="8" fill="#e3e6ea" stroke="#bfc5ce" stroke-width="2"/>
-      <text x="36" y="40" font-size="15" fill="#888" font-family="Segoe UI, Arial">Bookmarks Bar</text>
-      <!-- Button Shadow -->
-      <ellipse id="shadow" cx="70" cy="80" rx="38" ry="10" fill="#e3e6ea" opacity="0.7"/>
-      <!-- Bookmarklet Button -->
-      <g id="drag-btn" style="cursor:grab;">
-        <rect x="32" y="58" width="76" height="32" rx="16" fill="#bfc5ce" stroke="#d1d5db" stroke-width="2"/>
-        <text x="70" y="79" font-size="18" fill="#222" font-family="Segoe UI, Arial" text-anchor="middle" alignment-baseline="middle">🗳️</text>
-      </g>
-      <!-- Arrow Path -->
-      <path id="arrow-path" d="M70 68 Q70 50 70 38" fill="none" stroke="#bfc5ce" stroke-width="3" marker-end="url(#arrowhead)"/>
-      <defs>
-        <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
-          <polygon points="0,0 8,4 0,8" fill="#bfc5ce"/>
-        </marker>
-      </defs>
-    </svg>
-  </div>
-  <div style="color:#888; font-size:0.98rem; margin-bottom:10px; text-align:center;">
-    <span style="font-size:1.1em;">⬆️</span> Drag the button up to your bookmarks bar!
-  </div>
   
   <div class="instructions">
     <div class="instructions-title">
@@ -153,8 +118,17 @@
     </ol>
   </div>
   <div class="helper-text">
-    👉 Drag this button to your bookmarks bar!
+    🧑‍💻 Drag this button to your browser's bookmark bar!
   </div>
-  <a class="bookmarklet-btn" href="javascript:(function(){var url=encodeURIComponent(window.location.href);var companyElem=document.querySelector('div.uir-record-name');var company=companyElem?encodeURIComponent(companyElem.innerText
+  <a class="bookmarklet-btn" href="javascript:(function(){var url=encodeURIComponent(window.location.href);var companyElem=document.querySelector('div.uir-record-name');var company=companyElem?encodeURIComponent(companyElem.innerText):'';var leadFitElem=document.querySelector('div[data-nsps-label=&quot;Lead Fit&quot;] span.inputreadonly.uir-field-input');var leadFit=leadFitElem?encodeURIComponent(leadFitElem.innerText):'';window.open('https://docs.google.com/forms/d/e/1FAIpQLSfuO4JJ5VmIlCFjK84lzX5ELMID6cfkzout45Cjw7MtQ1fHXQ/viewform?usp=pp_url'+'&entry.1694966359='+url+'&entry.1623620210='+company+'&entry.1560442882='+leadFit,'_blank');})();">🗳️ Lead Fit Feedback</a>
+  <div class="tip">
+    <b>Tip:</b> If you can't drag the button, right-click and copy the link address, then create a new bookmark and paste it in.<br>
+    <br>
+    <b>Having trouble?</b> Make sure your bookmarks bar is visible!<br>
+    <span style="color:#2b7a78;">Ctrl+Shift+B</span> (Windows) or <span style="color:#2b7a78;">Cmd+Shift+B</span> (Mac)
+  </div>
+</body>
+</html>
+
 
 
